@@ -1,0 +1,45 @@
+<head>
+  <title>meteor_form_bug</title>
+</head>
+
+<body>
+{{>xample}}
+</body>
+
+<template name="xample">
+{{#if next_is_true}}
+	{{>part2}}
+{{else}}
+	{{>part1}}
+{{/if}}
+</template>
+
+<template name="part1">
+ 	<div class="container">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Registration</legend>
+					<div class="control-group">
+						<label class="control-label" for="input01">Full Name</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="input01">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="input02">Email</label>
+						<div class="controls">
+							<input type="email" class="input-xlarge" id="input02">
+						</div>
+					</div>
+					<div class="form-actions">
+							<button type="submit" class="btn btn-primary" id="next">Next</button>
+					</div>
+				</fieldset>
+			</form>
+	</div><!--end of container-->
+	<!--Hi <button type="submit" class="btn btn-primary" id="next">Next</button> Remove the comment to make it work normally-->
+</template>
+
+<template name="part2">
+	<h3>Now it works!</h3>
+</template>
